@@ -1,7 +1,6 @@
-<h3>Soy el product component</h3>
-<div>
-    {{ product.title }}
-    <strong>${{product.price}}</strong>
-    <img [src]="product.image" [alt]="product.title" >
-    <button (click)="addCart()">Agregar al carrito</button>
-</div>
+{{ product.title | uppercase }}
+<strong>{{product.price | currency}}</strong>
+<p>{{ product.description | slice:0:10  }}</p>
+<img [src]="product.image" [alt]="product.title" >
+<p>{{today | date:'HH:mm:s'}}</p>
+<button (click)="addCart()">Agregar al carrito</button>

@@ -24,6 +24,7 @@ export class ProductComponent{
         console.log('constructor')
     }
 
+    today = new Date();
     ngOnChanges(changes: SimpleChange){
         console.log('onChanges', changes)
     }
