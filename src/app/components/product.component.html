@@ -3,4 +3,5 @@
     {{ product.title }}
     <strong>${{product.price}}</strong>
     <img [src]="product.image" [alt]="product.title" >
+    <button (click)="addCart()">Agregar al carrito</button>
 </div>
