@@ -13,3 +13,9 @@
     <button (click)="removeItem(i)">Eliminar</button>
   </li>
 </ul>
+
+<div *ngFor="let product of products; index as i">
+  {{ product.title }}
+  <img [src]="product.image" [alt]="product.title" >
+  ${{product.price}}
+</div>
