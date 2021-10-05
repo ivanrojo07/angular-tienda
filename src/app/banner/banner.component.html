@@ -1,0 +1,15 @@
+<!-- <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let img of images; index as i">
+            <img [src]="img" [alt]="i" />
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div> -->
+
+<swiper [navigation]="true" class="mySwiper">
+    <ng-template swiperSlide *ngFor="let img of images; index as i">
+        <img [src]="img" [alt]="i" />
+    </ng-template>
+</swiper>

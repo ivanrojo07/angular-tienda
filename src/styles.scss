@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 body{
     margin: 0;
     padding: 0;
+    position: relative;
+    height: 100%;
 }
 
 .product-grid{
