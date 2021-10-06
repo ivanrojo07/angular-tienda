@@ -2,12 +2,12 @@
 @import 'swiper/scss';
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
-body{
-    margin: 0;
-    padding: 0;
-    position: relative;
-    height: 100%;
-}
+// body{
+//     margin: 0;
+//     padding: 0;
+//     position: relative;
+//     height: 100%;
+// }
 
 .product-grid{
     display: grid;
@@ -20,3 +20,5 @@ body{
         grid-template-columns: repeat(3, 1fr );
     }   
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
