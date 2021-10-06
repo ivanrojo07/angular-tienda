@@ -8,17 +8,30 @@
 //     position: relative;
 //     height: 100%;
 // }
-
+.container{
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 5px;
+}
 .product-grid{
     display: grid;
     grid-template-columns: repeat(1, 1fr );
+    gap: 50px 20px;
 }
 
 @media (min-width: 576px) {
     .product-grid{
         display: grid;
         grid-template-columns: repeat(3, 1fr );
+        gap: 5px 2px;
     }   
+    .container{
+        max-width: 75%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 5px 5px;
+    }
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

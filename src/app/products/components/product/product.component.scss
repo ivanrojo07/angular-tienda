@@ -1,9 +1,16 @@
 :host{
-    margin: 2px;
-    border: 1px solid black;
-    border-radius: 5px;
     display: block;
 }
-img{
-    max-width: 50%;
+.crop-image{
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    img{
+        position: absolute;
+        max-width: 100%;
+        margin: auto;
+    }
+
 }
