@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/core';
-import { Product } from '../product.model';
+import { Product } from '../../../product.model';
 
 @Component({
     selector:'app-product',
@@ -25,21 +25,21 @@ export class ProductComponent{
     }
 
     today = new Date();
-    ngOnChanges(changes: SimpleChange){
-        console.log('onChanges', changes)
-    }
+    // ngOnChanges(changes: SimpleChange){
+    //     console.log('onChanges', changes)
+    // }
 
-    ngOnInit(){
-        console.log('onInit')
-    }
+    // ngOnInit(){
+    //     console.log('onInit')
+    // }
 
-    ngDoCheck(){
-        console.log('doCheck')
-    }
+    // ngDoCheck(){
+    //     console.log('doCheck')
+    // }
 
-    ngOnDestroy(){
-        console.log('onDestroy')
-    }
+    // ngOnDestroy(){
+    //     console.log('onDestroy')
+    // }
 
     addCart(){
         console.log('añadir al carrito', this.product.id)

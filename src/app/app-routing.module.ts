@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { ProductsComponent } from './products/products.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
@@ -11,9 +8,8 @@ const routes:Routes = [
   {path:'', component:LayoutComponent, children:[
     {path:'', redirectTo:'home', pathMatch:'full'},
     {path:'home', loadChildren: ()=>import('./home/home.module').then(m=>m.HomeModule)},
-    {path:'contact', component:ContactComponent, canActivate:[AdminGuard]},
-    {path:'products', component:ProductsComponent},
-    {path:'products/:id', component:ProductDetailComponent},
+    {path:'contact', loadChildren: ()=>import('./contact/contact.module').then(m=>m.ContactModule), canActivate:[AdminGuard]},
+    {path:'products', loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule).catch(error=>console.log(error))},
     {path:'**', component:PageNotFoundComponent}
   ]}
   
