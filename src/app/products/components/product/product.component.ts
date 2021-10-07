@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter, SimpleChange} from '@angular/core';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 import { Product } from '../../../product.model';
 
 @Component({
@@ -20,7 +21,7 @@ export class ProductComponent{
 
     @Output() productClicked= new EventEmitter<Product>();
 
-    constructor(){
+    constructor(private productsService:ProductsService){
         console.log('constructor')
     }
 
@@ -44,5 +45,10 @@ export class ProductComponent{
     addCart(){
         console.log('añadir al carrito', this.product.id)
         this.productClicked.emit(this.product)
+    }
+    deleteProduct(){
+        this.productsService.deleteProduct(this.product.id).subscribe(response=>{
+            console.log(response);
+        })
     }
 }

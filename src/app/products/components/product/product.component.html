@@ -20,6 +20,8 @@
         <div class="row">
             <button mat-button color="primary" (click)="addCart()">Agregar al carrito</button>
             <button mat-button color="accent" [routerLink]="['/products/',product.id]">Show Details</button>
+            <button mat-button color="warn" (click)="deleteProduct()">Delete Product</button>
+
         </div>
     </mat-card-actions>
 </mat-card>

@@ -25,4 +25,12 @@ export class ProductsService {
   setProduct(product:Product){
     return this.httpClient.post<Product>(`${this.uri}/products`,product);
   }
+  
+  updateProduct(id: string, changes:Partial<Product>){
+    return this.httpClient.put<Product>(`${this.uri}/products/${id}`,changes);
+  }
+
+  deleteProduct(id: string){
+    return this.httpClient.delete<Boolean>(`${this.uri}/products/${id}`);
+  }
 }

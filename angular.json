@@ -55,6 +55,27 @@
               ],
               "outputHashing": "all"
             },
+            "stag": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stag.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -71,6 +92,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-tienda:build:production"
+            },
+            "stag": {
+              "browserTarget": "angular-tienda:build:stag"
             },
             "development": {
               "browserTarget": "angular-tienda:build:development"
