@@ -46,9 +46,4 @@ export class ProductComponent{
         console.log('añadir al carrito', this.product.id)
         this.productClicked.emit(this.product)
     }
-    deleteProduct(){
-        this.productsService.deleteProduct(this.product.id).subscribe(response=>{
-            console.log(response);
-        })
-    }
 }

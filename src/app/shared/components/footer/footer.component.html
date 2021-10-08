@@ -16,9 +16,18 @@
         <div class="box">
             <ul>
                 <li>
-                    <span>Hola Ivan 2021</span>
+                    <span>Contactanos</span>
                 </li>
             </ul>
+            <mat-form-field>
+                <input matInput placeholder="Ingrese su correo" [formControl]="emailField" type="email">
+            </mat-form-field>
+            <div>
+                <button mat-button [disabled]="emailField.touched && emailField.invalid" color="primary" (click)="sendEmail()">Enviar</button>
+                <p *ngIf="emailField.touched && emailField.invalid">
+                    El campo no es valido
+                </p>
+            </div>
         </div>
     </div>
 </div>
