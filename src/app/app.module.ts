@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { EmailAuthProvider as AUTH_SETTINGS } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -32,6 +35,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     CoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
   ],
   providers: [
     {provide: AUTH_SETTINGS, useValue:{ appVerificationDisabledForTesting: true } },

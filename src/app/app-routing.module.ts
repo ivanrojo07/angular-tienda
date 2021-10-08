@@ -5,11 +5,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
 const routes:Routes = [
-  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)},
+  {path:'admin', loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule), canActivate:[AdminGuard]},
   {path:'', component:LayoutComponent, children:[
     {path:'', redirectTo:'home', pathMatch:'full'},
     {path:'home', loadChildren: ()=>import('./home/home.module').then(m=>m.HomeModule)},
-    {path:'contact', loadChildren: ()=>import('./contact/contact.module').then(m=>m.ContactModule), canActivate:[AdminGuard]},
+    {path:'contact', loadChildren: ()=>import('./contact/contact.module').then(m=>m.ContactModule)},
     {path:'products', loadChildren:()=>import('./products/products.module').then(m=>m.ProductsModule).catch(error=>console.log(error))},
     {path:'auth', loadChildren:()=>import('./auth/auth.module').then(m=>m.AuthModule)},
     {path:'**', component:PageNotFoundComponent}

@@ -14,12 +14,11 @@
           </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Image" formControlName="image">
-            <mat-error *ngIf="productForm.controls['image'].hasError('required')">
-              Image is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+          <img *ngIf="image_url$ | async as image" [src]="image" alt="">
+         <input type="file" (change)="uploadFile($event)">
+         <mat-error *ngIf="productForm.controls['id'].hasError('required')">
+          Id name is <strong>required</strong>
+        </mat-error>
         </div>
       </div>
       <div class="row">
