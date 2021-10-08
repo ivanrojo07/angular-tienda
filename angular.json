@@ -122,7 +122,6 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
-              
               "./node_modules/flexboxgrid/dist/flexboxgrid.min.css"
             ],
             "scripts": []
@@ -136,6 +135,10 @@
               "src/**/*.html"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

@@ -11,7 +11,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { EmailAuthProvider as AUTH_SETTINGS } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -28,7 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {provide: AUTH_SETTINGS, useValue:{ appVerificationDisabledForTesting: true } },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

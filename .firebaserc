@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-tienda-2f429": {
+      "hosting": {
+        "angular-tienda": [
+          "angular-tienda-2f429"
+        ]
+      }
+    }
+  }
+}
