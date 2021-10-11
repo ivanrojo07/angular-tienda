@@ -5,10 +5,11 @@ import { ProductsService } from '../../../core/services/products/products.servic
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  templateUrl: './products.container.html',
+  styleUrls: ['./products.container.css']
 })
-export class ProductsComponent implements OnInit {
+// eslint-disable-next-line @angular-eslint/component-class-suffix
+export class ProductsContainer implements OnInit {
 
   //  
   products: Product[] = [];
