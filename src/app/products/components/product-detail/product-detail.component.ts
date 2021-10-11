@@ -25,5 +25,12 @@ export class ProductDetailComponent implements OnInit {
         return this.productService.getProduct(params.id)
       })
     );
+    this.getRandomUsers();
+  }
+
+  getRandomUsers(){
+    this.productService.getRandomUsers().subscribe(users=>{
+      console.log(users)
+    })
   }
 }
