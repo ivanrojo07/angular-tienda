@@ -8,7 +8,7 @@ import { CartService } from 'src/app/core/services/cart/cart.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   $total!: Observable<number>;
   installEvent!: Event ;
@@ -20,8 +20,7 @@ export class HeaderComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
-  }
+ 
   @HostListener('window:beforeinstallprompt',['$event'])
   onBeforeInstallPrompt(event: Event){
     console.log(event)
