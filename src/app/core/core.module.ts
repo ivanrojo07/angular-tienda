@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ProductsService } from './services/products/products.service';
 
 
-
 @NgModule({
   declarations: [],
   imports: [

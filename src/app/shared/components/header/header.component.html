@@ -18,7 +18,7 @@
             </div>
             <div class="col-xs-2">
                 <div class="box">
-                    <a mat-raised-button matBadge="15" matBadgeColor="warn">
+                    <a mat-raised-button [matBadge]="$total | async" matBadgeColor="warn">
                         <mat-icon aria-hidden="false" aria-label="Shopping Cart Icon" >shopping_cart</mat-icon>
                     </a>
 
