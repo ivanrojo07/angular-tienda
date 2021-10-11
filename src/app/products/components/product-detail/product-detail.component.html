@@ -1,16 +1,19 @@
-<div>
-    <img [src]="product.image" [alt]="product.title">
-</div>
-<div>
-    <ul>
-        <li>
-            Name: {{product.title | uppercase}}
-        </li>
-        <li>
-            Description: {{product.description}}
-        </li>
-        <li>
-            Price: {{product.price | currency}}
-        </li>
-    </ul>
+<div  *ngIf="($product | async) as product">
+    <div>
+        <img [src]="product.image" [alt]="product.title">
+    </div>
+    <div>
+        <ul>
+            <li>
+                Name: {{product.title | uppercase}}
+            </li>
+            <li>
+                Description: {{product.description}}
+            </li>
+            <li>
+                Price: {{product.price | currency}}
+            </li>
+        </ul>
+    </div>
+
 </div>
