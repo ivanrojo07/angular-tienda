@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from '../../../product.model';
 import { ProductsService } from '../../../core/services/products/products.service';
+import { switchMap } from 'rxjs/operators';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -24,15 +25,12 @@ export class ProductDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params:Params)=>{
-      let id = params.id
-      this.fetchProduct(id);
+    this.route.params.pipe(
+      switchMap((params:Params)=>{
+        return this.productService.getProduct(params.id)
+      })
+    ).subscribe((product)=>{
+      this.product = product
     })
   }
-  fetchProduct(id:string){
-    this.productService.getProduct(id).subscribe(product=>{
-      this.product = product
-    });
-  }
-
 }
