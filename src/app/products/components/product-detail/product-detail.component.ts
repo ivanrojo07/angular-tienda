@@ -26,11 +26,19 @@ export class ProductDetailComponent implements OnInit {
       })
     );
     this.getRandomUsers();
+    this.getFile();
   }
 
   getRandomUsers(){
     this.productService.getRandomUsers().subscribe(users=>{
       console.log(users)
+    },error=>{
+      console.log(error)
+    })
+  }
+  getFile(){
+    this.productService.getFile().subscribe(content=>{
+      console.log(content)
     })
   }
 }
